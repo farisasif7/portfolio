@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Projects</title>
+    <title>Certificates</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="cv.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <nav>
       <a href="index.html" onclick="navigateTo('index.html')">Home</a>
@@ -25,26 +26,16 @@
     </nav>
     <div class="top-container">
       <!-- <img class="top-cloud" src="images/cloud.png" alt="cloud-img"> -->
-      <h1>My Projects</h1>
+      <h1>My Certificates</h1>
       <!-- <h2>a computer scientist.</h2> -->
       <!-- <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img"> -->
       <!-- <img src="images/signature1.png" alt="mountain-img"> -->
-
-      <div id="filterBox">
-        <label for="techFilter">Filter by Technology : </label>
-        <input
-          type="text"
-          id="techFilter"
-          oninput="filterProjects()"
-          placeholder="Enter technology..."
-        />
-      </div>
     </div>
-
     <div class="middle-container">
-      <div id="projectsContainer">
-        <!-- Project items will be dynamically added here using JavaScript -->
+      <div id="certificatesContainer">
+        <!-- Certificates items will be dynamically added here using JavaScript -->
       </div>
+
       <hr />
       <div class="contact-me">
         <h2>Get In Touch</h2>
@@ -55,8 +46,6 @@
         <a class="btn" href="mailto:farisbinasif2016@gmail.com">CONTACT ME</a>
       </div>
     </div>
-    <!-- <hr> -->
-
     <div class="bottom-container">
       <a
         class="footer-link"
@@ -69,60 +58,40 @@
     </div>
 
     <script>
-      // Sample projects data (replace this with your actual project data)
-      const projects = [
+      const certificates = [
         {
-          name: "Project 1",
+          title: "Certificate 1",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl id aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc eu justo. Sed vitae nisl euismod, aliquet nisl",
-          techStack: ["Python", "Django", "HTML", "CSS"],
-          githubLink: "https://github.com/yourusername/project1",
-          image: "images/ml.jpg",
+            image: "images/certificate-1.jpg"
         },
         {
-          name: "Project 2",
+          title: "Certificate 2",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl id aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc eu justo. Sed vitae nisl euismod, aliquet nisl",
-          techStack: ["Node.js", "Express", "JavaScript", "HTML", "CSS"],
-          githubLink: "https://github.com/yourusername/project2",
-          image: "images/sd3.png",
+            image: "images/certificate-2.jpg"
         },
-        // Add more projects as needed
+        // Add more courses as needed
       ];
 
-      // Function to display projects based on the filter
-      function filterProjects() {
-        const filterInput = document
-          .getElementById("techFilter")
-          .value.toLowerCase();
-        const projectsContainer = document.getElementById("projectsContainer");
-        projectsContainer.innerHTML = ""; // Clear previous projects
+      function displayCertificates() {
+        const certificatesContainer = document.getElementById("certificatesContainer");
+        certificatesContainer.innerHTML = ""; // Clear previous courses
 
-        projects.forEach((project) => {
-          // Check if the project contains the entered technology in the filter
-          if (
-            project.techStack.some((tech) =>
-              tech.toLowerCase().includes(filterInput)
-            )
-          ) {
-            const projectDiv = document.createElement("div");
-            projectDiv.className = "project";
-            projectDiv.innerHTML = `
-                        <h3>${project.name}</h3>
-                        <p>Tech Stack: ${project.techStack.join(", ")}</p>
-                        <p>${project.description}</p>
-                        <p><a href="${
-                          project.githubLink
-                        }" target="_blank">GitHub Link</a></p>
-                        <img src="${project.image}" alt="${project.name}">
-                    `;
-            projectsContainer.appendChild(projectDiv);
-          }
+        certificates.forEach((certificate) => {
+          const certificatesDiv = document.createElement("div");
+          certificatesDiv.className = "certificate";
+          certificatesDiv.innerHTML = `
+                    <h3>${certificate.title}</h3>
+                    <p>Description: ${certificate.description}</p>
+                    <img src="${certificate.image}" alt="${certificate.title} Certificate" />
+                `;
+          certificatesContainer.appendChild(certificatesDiv);
         });
       }
 
-      // Initial display of projects
-      filterProjects();
+      // Initial display of courses
+      displayCertificates();
 
       // JavaScript function to handle redirection
       function navigateTo(url) {
