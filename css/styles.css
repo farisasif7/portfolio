@@ -234,25 +234,3 @@ label {
   margin-bottom: 50px;
   border-radius: 50px;
 }
-
-/* **********************Certificates******************************* */
-
-.certificate {
-  border: 1px solid #ddd;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-radius: 50px;
-}
-
-.certificate img {
-  width: 400px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
